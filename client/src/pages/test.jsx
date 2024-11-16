@@ -19,6 +19,7 @@ const Profile = () => {
 		if (image) {
 			handleFileUpload(image);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [image]);
 	const handleFileUpload = async (image) => {
 		const storage = getStorage(app);
@@ -31,6 +32,7 @@ const Profile = () => {
 				const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 				setImagePercent(Math.round(progress));
 			},
+			// eslint-disable-next-line no-unused-vars
 			(error) => {
 				setImageError(true);
 			},
@@ -91,6 +93,7 @@ const Profile = () => {
 			console.log(error);
 		}
 	};
+
 	return (
 		<div className="p-3 max-w-lg mx-auto">
 			<h1 className="text-3xl font-semibold text-center my-7">Profile</h1>

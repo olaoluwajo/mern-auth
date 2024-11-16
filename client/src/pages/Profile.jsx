@@ -12,6 +12,7 @@ const Profile = () => {
 	const [imagePercent, setImagePercent] = useState(0);
 	const [imageError, setImageError] = useState(false);
 	const [formData, setFormData] = useState({});
+	// eslint-disable-next-line no-unused-vars
 	const [updateSuccess, setUpdateSuccess] = useState(false);
 
 	const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -21,6 +22,8 @@ const Profile = () => {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [image]);
+
+	// console.log(image);
 	const handleFileUpload = async (image) => {
 		const storage = getStorage(app);
 		const fileName = new Date().getTime() + image.name;
