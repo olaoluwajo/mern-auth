@@ -99,8 +99,8 @@ const Profile = () => {
 			<h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
 			<form onSubmit={handleSubmit} className="flex flex-col gap-4">
 				<input type="file" ref={fileRef} hidden accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
-				{/* 
-      firebase storage rules:  
+				{/*
+      firebase storage rules:
       allow read;
       allow write: if
       request.resource.size < 2 * 1024 * 1024 &&

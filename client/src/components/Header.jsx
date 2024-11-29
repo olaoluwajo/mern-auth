@@ -19,7 +19,17 @@ export default function Header() {
 					{/* <Link to="/profile">
 						<li>Sign In</li>
 					</Link> */}
-					<Link to="/profile">{currentUser ? <img src={currentUser.profilePicture} alt="profile" className="size-7	 rounded-full object-cover" /> : <li>Sign In</li>}</Link>
+					<Link to="/profile">
+						{currentUser ? (
+							<img
+								src={currentUser.profilePicture}
+								alt="profile"
+								className="size-7	 rounded-full object-cover"
+							/>
+						) : (
+							<li>Sign In</li>
+						)}
+					</Link>
 				</ul>
 			</div>
 		</div>

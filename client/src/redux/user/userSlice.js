@@ -25,11 +25,48 @@ const userSlice = createSlice({
 		},
 		signOut: (state) => {
 			state.currentUser = null;
+			state.error = false;
+			state.loading = false;
+		},
+		updateUserStart: (state) => {
+			state.loading = true;
+		},
+
+		updateUserSuccess: (state, action) => {
+			state.currentUser = action.payload;
+			state.loading = false;
+			state.error = false;
+		},
+		updateUserFailure: (state, action) => {
+			state.loading = false;
+			state.error = action.payload;
+		},
+		deleteUserStart: (state) => {
+			state.loading = true;
+		},
+		deleteUserSuccess: (state) => {
+			state.currentUser = null;
+			state.loading = false;
+			state.error = false;
+		},
+		deleteUserFailure: (state, action) => {
+			state.loading = false;
+			state.error = action.payload;
 		},
 	},
 });
 
-export const { signInStart, signInSuccess, signInFailure, signOut } = userSlice.actions;
-
+export const {
+	signInStart,
+	signInSuccess,
+	signInFailure,
+	signOut,
+	updateUserStart,
+	updateUserSuccess,
+	updateUserFailure,
+	deleteUserFailure,
+	deleteUserSuccess,
+	deleteUserStart
+} = userSlice.actions;
 
 export default userSlice.reducer;
